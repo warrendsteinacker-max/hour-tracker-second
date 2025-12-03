@@ -1,18 +1,50 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function CreateAccount() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState(''); 
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage(''); 
+
     if (password !== confirmPassword) {
-      alert('Passwords do not match')
-      return
+      setMessage('Passwords do not match');
+      return;
     }
-    console.log('Create account with:', { email, password })
-  }
+
+    try {
+      // Inside CreateAccount.jsx (and SignIn.jsx)
+
+// ➡️ NEW Fetch URL: Targeting backend on port 8080
+const response = await fetch('http://localhost:8080/backend/api/register', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+});
+
+   
+
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage('✅ Account created successfully! You can now sign in.');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+      } else {
+        setMessage(`❌ Error: ${data.message || 'Registration failed.'}`);
+      }
+    } catch (error) {
+      setMessage('❌ Failed to connect to the server. Is the backend running on port 8081?');
+      console.error('Network error during registration:', error);
+    }
+  };
 
   return (
     <div className="create-account-container">
@@ -41,6 +73,7 @@ export default function CreateAccount() {
         />
         <button type="submit">Create Account</button>
       </form>
+      {message && <p className="status-message">{message}</p>}
     </div>
-  )
+  );
 }
