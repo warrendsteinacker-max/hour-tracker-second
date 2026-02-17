@@ -7,6 +7,28 @@
   </head>
   <body style="justify-content: center; align-items: center; display: grid; min-height: 100vh; margin: 0; padding: 0">
     <div style="background-color: red">h</div>
-    <script></script>
+    <script>
+
+      (function (){
+        const f = async() => 
+        {
+          try{
+            const res = await fetch('http://localhost:3001/gtoB')
+            const data = await res.json()
+            
+            data.forEach((item) => {
+              const newd = document.createElement('div')
+              newd.innerHTML = `<p>${item.name}</p>`
+              document.body.appendChild(newd)
+            })
+          }
+          catch(error){
+            console.error(error.message)
+          }
+        } 
+        f()
+      })()
+
+    </script>
   </body>
 </html>

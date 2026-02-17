@@ -3,8 +3,8 @@ import Stuff from "./Stuff.js"
 export const mp = async(req, res) => {
     const {name, dep, count} = req.body
     try{
-        const data = await Stuff.creat({name, dep, count})
-        res.status(200).json(data) 
+        const data = await Stuff.create({name, dep, count})
+        res.status(201).json(data) 
     }
     catch(error){
         console.error(error.message)
