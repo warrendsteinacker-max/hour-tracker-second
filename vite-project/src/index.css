@@ -69,16 +69,16 @@ button:focus-visible {
   }
 } */
 
-/* *{
-  border-box: box-sizing
-} */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body{
   justify-content: center;
   align-items: center;
   display: grid;
   min-height: 100vh;
-  padding: 0;
-  margin: 0;
   position: relative;
 }
