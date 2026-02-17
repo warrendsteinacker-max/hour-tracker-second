@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useReducer } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
     <>
-      <div style={{postion: 'absolute', Top: '0%', Left: '-100%' }}>
+      <div style={{position: 'absolute', top: '20%', left: '20%', display: 'flex', flex-direction: 'row' }}>
         <img src='vite.svg' />
       </div>
     </>
