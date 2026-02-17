@@ -23,9 +23,13 @@ const Posts = () => {
         }
     }, [])
 
+    if(E){
+        return <h3>There Has Been an Error</h3>
+    }
+
   return (
     <>
-    E ? 
+        {data ? data.map((item) => <div key={item._id} style={{display: 'flex', fleDirection: 'column'}}><h3>{item.name}</h3><textarea>{item.dep}</textarea></div>) : <h3>No Posts</h3>}
     </>
   )
 }
