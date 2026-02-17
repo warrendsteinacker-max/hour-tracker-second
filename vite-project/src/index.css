@@ -1,4 +1,4 @@
-
+/* 
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -67,4 +67,17 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
+/* *{
+  border-box: box-sizing
+} */
+
+/* body{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+} */

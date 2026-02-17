@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <img class='i' src='vite.svg'/>
+      <div style={{postion: 'absolute', Top: '0%', Left: '-100%' }}>
+        <img src='vite.svg' />
       </div>
     </>
   )
