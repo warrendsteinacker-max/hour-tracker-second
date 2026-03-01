@@ -54,9 +54,28 @@ const store1 = createStore({
             console.error(error.message)
         }
     }),
-    upDateP: thunk((actions, payload, helper) => {
+    upDateP: thunk(async(actions, payload, helper) => {
         try{
             const data = helper.getState().D
+            const id = payload.id
+            const name = helper.getState().name
+            const dep = helper.getState().descript
+            const title = helper.getState().title
+
+            const res = await fetch('url', {method: "PUT", headers: {"Content-Type":"application/json"}, body: JSON.stringify({name, dep, title})})
+
+            if(!res.ok){
+                throw new Error('response failed')
+            }
+
+            const updatedD = data.map((item) => item.id === id ? {...item, name, dep, title} : item )
+            
+            actions.setD(updatedD)
+            actions.setE(false)
         }
         catch(error){
-            console.e
+            actions.setE(true)
+            console.error(error.message)
+        }
+    })
+})
