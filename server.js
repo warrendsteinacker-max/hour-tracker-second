@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import connectDB from './connectDB.js'
+import connectDB from './server/connectDB.js'
 import router from "./Routes.js"
 
 
