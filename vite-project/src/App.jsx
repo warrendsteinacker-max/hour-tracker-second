@@ -12,14 +12,15 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <NavBar/>
         <Routes>
           <Route path='/' element={<Posts data={data} setD={setD}/>}/>
           <Route path='/post' element={<PostPage/>}/>
           <Route path='/edit/:id' element={<EditP/>}/>
         </Routes>
-      </Router>
+      </Router> */}
+      <div>hello</div>
     </>
   )
 }

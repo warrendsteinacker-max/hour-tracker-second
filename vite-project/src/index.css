@@ -81,5 +81,9 @@ body{
   display: grid;
   min-height: 100vh;
   position: relative; */
-  background-image: url('vite-project/public/vite.svg'): ;
+  background-image: url('vite.svg');
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  /* background: red; */
 }
