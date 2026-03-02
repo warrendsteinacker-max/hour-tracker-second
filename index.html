@@ -2,12 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>church project</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body style="justify-content: center; align-items: center; display: grid; min-height: 100vh; margin: 0; padding: 0">
+    <div style="background-color: red">h</div>
+    <script>
+
+      (function (){
+        const f = async() => 
+        {
+          try{
+            const res = await fetch('http://localhost:3001/gtoB')
+            const data = await res.json()
+            
+            data.forEach((item) => {
+              const newd = document.createElement('div')
+              newd.innerHTML = `<p>${item.name}</p>`
+              document.body.appendChild(newd)
+            })
+          }
+          catch(error){
+            console.error(error.message)
+          }
+        } 
+        f()
+      })()
+
+    </script>
   </body>
 </html>

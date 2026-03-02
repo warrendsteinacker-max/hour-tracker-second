@@ -1,0 +1,23 @@
+import express from 'express'
+import cors from 'cors'
+import connectDB from './server/connectDB.js'
+import router from "./Routes.js"
+
+
+connectDB()
+
+const app = express()
+
+app.use(express.json())
+
+app.use(cors({origin: '*'}))
+
+app.use('/gtoB', router)
+
+app.listen(3001, () => {
+    console.log('server good')
+})
+
+
+
+
