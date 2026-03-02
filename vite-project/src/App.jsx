@@ -20,7 +20,7 @@ function App() {
           <Route path='/edit/:id' element={<EditP/>}/>
         </Routes>
       </Router> */}
-      <div>hello</div>
+      <div style={{padding: '10px', display: 'block', flexDirection: 'row', gap: '0px', backgroundColor: 'green', width: '500px', height: '500px', justifyContent: 'space-evenly' }}><div style={{backgroundColor: 'blue', height: '100px'}}>1</div><div style={{backgroundColor: 'blue'}}>2</div></div>
     </>
   )
 }

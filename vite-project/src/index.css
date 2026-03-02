@@ -82,8 +82,9 @@ body{
   min-height: 100vh;
   position: relative; */
   background-image: url('vite.svg');
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
   /* background: red; */
 }
