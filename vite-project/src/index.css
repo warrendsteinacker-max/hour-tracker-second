@@ -76,9 +76,10 @@ button:focus-visible {
 }
 
 body{
-  justify-content: center;
+  /* justify-content: center;
   align-items: center;
   display: grid;
   min-height: 100vh;
-  position: relative;
+  position: relative; */
+  background-image: url('vite-project/public/vite.svg'): ;
 }
